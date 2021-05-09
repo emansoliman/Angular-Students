@@ -1,0 +1,15 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container-fluid justify-content-center">
+    <a
+      class="navbar-brand"
+      [routerLinkActiveOptions]="{ exact: true }"
+      routerLinkActive="custom-underline"
+      routerLink="/students"
+      >Students</a
+    >
+  </div>
+</nav>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

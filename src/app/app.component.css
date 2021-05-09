@@ -1,0 +1,22 @@
+.navbar-brand,
+.navbar-brand:visited,
+.navbar-brand:active {
+  color: #f0ebcc;
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+.custom-underline {
+  border-bottom-style: solid;
+  border-bottom-width: 3.1px;
+  border-radius: 2px;
+  width: fit-content;
+}
+
+.navbar-brand:hover {
+  color: #eeeeee;
+  border-bottom-style: solid;
+  border-bottom-width: 3.1px;
+  border-radius: 2px;
+  width: fit-content;
+}

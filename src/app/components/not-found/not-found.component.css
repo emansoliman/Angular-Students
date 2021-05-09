@@ -1,0 +1,14 @@
+.gray-color {
+  color: #eeeeee;
+}
+a,
+a:active,
+a:visited {
+  text-decoration: none;
+  color: #f0ebcc;
+}
+
+a:hover {
+  color: #eeeeee;
+  text-decoration: underline;
+}

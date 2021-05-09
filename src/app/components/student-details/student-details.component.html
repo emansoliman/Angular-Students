@@ -1,0 +1,21 @@
+<div class="row justify-content-center mt-5">
+  <div class="col-md-4">
+    <div class="card" *ngIf="student; else noStudent">
+      <div class="card-body">
+        <h3 class="card-title">{{ student.name }}</h3>
+        <p class="card-text">Email: {{ student.email }}</p>
+        <p class="card-text">Age: {{ student.age }}</p>
+      </div>
+      <div class="card-footer text-center">
+        <app-edit-student
+          [student]="student"
+          (updateStudent)="updateStudent($event)"
+        ></app-edit-student>
+        <app-delete-student [student]="student"></app-delete-student>
+      </div>
+    </div>
+    <ng-template #noStudent>
+      <p class="alert alert-info">No student found.</p>
+    </ng-template>
+  </div>
+</div>

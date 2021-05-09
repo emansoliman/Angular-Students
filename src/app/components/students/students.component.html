@@ -1,0 +1,43 @@
+<app-add-student (addedStudent)="recieveNewStudent($event)"></app-add-student>
+<app-filter-students
+  [students]="students"
+  (returnedFilteredStudents)="filterStudents($event)"
+></app-filter-students>
+<div class="row justify-content-center mt-5">
+  <div class="col-md-6">
+    <ul
+      class="list-group"
+      *ngIf="filteredStudents.length > 0 && filter; else noFilteredStudents"
+    >
+      <li
+        class="list-group-item"
+        *ngFor="let student of filteredStudents"
+        (click)="getStudentDetails(student.id)"
+      >
+        <p>Name: {{ student.name }}</p>
+        <p>Email: {{ student.email }}</p>
+        <p>Age: {{ student.age }}</p>
+      </li>
+    </ul>
+    <ul
+      class="list-group"
+      *ngIf="students.length > 0 && !filter; else noStudents"
+    >
+      <li
+        class="list-group-item"
+        *ngFor="let student of students"
+        (click)="getStudentDetails(student.id)"
+      >
+        <p>Name: {{ student.name }}</p>
+        <p>Email: {{ student.email }}</p>
+        <p>Age: {{ student.age }}</p>
+      </li>
+    </ul>
+    <ng-template #noStudents>
+      <p *ngIf="!filter" class="alert alert-info">No Students</p>
+    </ng-template>
+    <ng-template #noFilteredStudents>
+      <p *ngIf="filter" class="alert alert-info">No Results</p>
+    </ng-template>
+  </div>
+</div>

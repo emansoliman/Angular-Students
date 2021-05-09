@@ -1,0 +1,50 @@
+<button
+  type="button"
+  class="btn btn-danger"
+  data-bs-toggle="modal"
+  data-bs-target="#deleteStudentModal"
+>
+  Delete
+</button>
+<div
+  class="modal fade"
+  id="deleteStudentModal"
+  tabindex="-1"
+  aria-labelledby="deleteStudentModal"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div class="row justify-content-center">
+          <div class="col-md-3">
+            <img src="/assets/close-modal.png" alt="" class="img-fluid" />
+          </div>
+        </div>
+        <h3 class="modal-title">Are you sure?</h3>
+        <p>Are you sure you want to delete {{ student.name }}'s data?</p>
+      </div>
+      <div class="modal-footer justify-content-center">
+        <button
+          type="button"
+          class="btn btn-danger"
+          (click)="deleteStudent()"
+          data-bs-dismiss="modal"
+        >
+          Delete
+        </button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
